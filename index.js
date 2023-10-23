@@ -23,11 +23,17 @@ const questions = [
     type: "input",
     name: "title",
     message: "What is the name of your project?",
+    validate: (title) => {
+      return !title ? "Please enter a name for your project." : true;
+    },
   },
   {
     type: "input",
-    name: "deploy link",
+    name: "deploylink",
     message: "What is your live deploy link?",
+    validate: (link) => {
+      return !link ? "Please enter a URL for your project." : true;
+    },
   },
   {
     type: "input",
@@ -36,7 +42,7 @@ const questions = [
   },
   {
     type: "input",
-    name: "installation",
+    name: "install",
     message: "What are the steps to install your project?",
   },
   {
@@ -49,6 +55,30 @@ const questions = [
     name: "license",
     message: "What license are you using?",
     choices: licenses,
+  },
+  {
+    type: "confirm",
+    name: "collab",
+    message: "Did you have any other contributors?",
+  },
+  {
+    type: "input",
+    name: "collabpeople",
+    message: "What are their GitHub usernames?",
+    when: (data) => data.collab === true,
+    validate: (names) => {
+      return !names ? "Please enter another GitHub username." : true;
+    },
+  },
+  {
+    type: "input",
+    name: "questions",
+    message: "What is your GitHub username?",
+  },
+  {
+    type: "input",
+    name: "email",
+    message: "What is your email address?",
   },
 ];
 

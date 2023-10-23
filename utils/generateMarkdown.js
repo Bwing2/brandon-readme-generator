@@ -14,17 +14,50 @@ const licenseUrl = {
   "The Unlicense": `![License: The Unlicense](https://choosealicense.com/licenses/unlicense/)`,
 };
 
-function generateMarkdown(data) {
-  return `# ${data.title}
+// const installSteps = (install) => {
+//   install = `${data.install.split(".")}\n`;
+//   return install;
+// };
 
-## Live Deploy Link
-${data.deploylink}
+function generateMarkdown(data) {
+  return `## Table of Contents
+
+- [Live Deploy Link](#live-deploy-link)
+- [Description](#description)
+- [Installation](#installation)
+- [Usage](#usage)
+- [License](#license)
+- [Contributors](#contributors)
+- [Questions](#questions)
+
+# ${data.title}
+
+[Live deploy link](${data.deploylink})
 
 ## Description
+
 ${data.description}
 
+## Installation
 
+${data.install}
 
+## Usage
+
+${data.usage}
+
+## License 
+
+${data.license}
+
+## Contributors
+
+${data.collabpeople ? data.collabpeople : "No other contributors."}
+
+## Questions
+
+[GitHub Profile](https://github.com/${data.questions})
+[Email](${data.email})
 `;
 }
 
