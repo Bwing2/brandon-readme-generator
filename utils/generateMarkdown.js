@@ -9,7 +9,6 @@ function generateMarkdown(data) {
 
 ## Table of Contents
 
-- [Live Deploy Link](#live-deploy-link)
 - [Description](#description)
 - [Installation](#installation)
 - [Usage](#usage)
@@ -36,6 +35,10 @@ Licensed using ${data.license}
 ## Contributors
 
 ${data.collabpeople ? data.collabpeople : "No other contributors."}
+
+## Tests
+
+${data.tests}
 
 ## Questions
 
