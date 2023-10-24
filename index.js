@@ -3,18 +3,18 @@ const fs = require("fs");
 const generateMarkdown = require("./utils/generateMarkdown.js");
 
 const licenses = [
-  "Apache License 2.0",
-  "GNU General Public License 3.0",
-  "MIT License",
-  "BSD 2-Clause 'Simplified' License",
-  "BSD 3-Clause 'New' or 'Revised' License",
+  "Apache 2.0",
+  "GNU General 3.0",
+  "MIT",
+  "BSD 2-Clause",
+  "BSD 3-Clause",
   "Boost Software 2.0",
   "Creative Commons Zero v1.0 Universal",
   "Eclipse Public 2.0",
   "GNU Affero General Public v3.0",
-  "GNU General Public License v2.0",
-  "GNU Lesser General Public License v2.1",
-  "Mozilla Public License 2.0",
+  "GNU General Public v2.0",
+  "GNU Lesser General Public v2.1",
+  "MozillaLicense 2.0",
   "The Unlicense",
 ];
 
@@ -39,16 +39,25 @@ const questions = [
     type: "input",
     name: "description",
     message: "What is the description of your project?",
+    validate: (desc) => {
+      return !desc ? "Please enter a description for your project." : true;
+    },
   },
   {
     type: "input",
     name: "install",
     message: "What are the steps to install your project?",
+    validate: (steps) => {
+      return !steps ? "Please enter the steps to install your project." : true;
+    },
   },
   {
     type: "input",
     name: "usage",
     message: "What are the usage cases for your project?",
+    validate: (usage) => {
+      return !usage ? "Please enter a useage case for your project." : true;
+    },
   },
   {
     type: "list",
@@ -65,7 +74,9 @@ const questions = [
     type: "input",
     name: "collabpeople",
     message: "What are their GitHub usernames?",
-    when: (data) => data.collab === true,
+    when: (data) => {
+      return data.collab === true;
+    },
     validate: (names) => {
       return !names ? "Please enter another GitHub username." : true;
     },
@@ -74,11 +85,17 @@ const questions = [
     type: "input",
     name: "questions",
     message: "What is your GitHub username?",
+    validate: (username) => {
+      return !username ? "Please enter your GitHub username." : true;
+    },
   },
   {
     type: "input",
     name: "email",
     message: "What is your email address?",
+    validate: (email) => {
+      return !email ? "Please enter your email address." : true;
+    },
   },
 ];
 
