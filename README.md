@@ -1,6 +1,6 @@
 # Brandon README.md Generator
 
-[Video Demonstration](placeholder)
+[Video Demonstration](https://youtu.be/Eh-oumU7cEs)
 
 ![Github License](https://img.shields.io/badge/License-MIT-green.svg)
 
