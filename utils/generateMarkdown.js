@@ -31,7 +31,7 @@ ${data.usage}
 
 ## License 
 
-${data.license}
+Licensed using ${data.license}
 
 ## Contributors
 
